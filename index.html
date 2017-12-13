@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Crystal Collector Game</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+</head>
+<body>
+	<!--will be using Bootstrap for the style aspect of the assignment-->
+
+	<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-3">Crystal Collector</h1>
+    <p class="lead">Game Instructions: You will be given a random number at the start of the game. There are four crystals below. By clicking on a crystal you will add a specific amount of points to your total score. You win the game by matching your total score to the ramdom number, you lose the game if your total score goes above the random number.
+
+     The value of each crystal is hidden from you until you click on it. Each time when the game starts, the game will change the values of each crystal.</p>
+  </div>
+</div>
+	
+
+	<div class="row">
+		<div class="col-sm-3">
+		<h2>Random Number Chosen</h2>
+		<div class="card card-outline">
+  <div class="card-block">
+  	<p class="randomNumber">
+  		Random Number
+  	</p>
+  </div>
+</div>
+		</div>
+
+		<!--images will not appear properly-->
+				<div class="col-md-6 gemImages">
+					<h2>Click the gems to play the game!</h2>
+					<img src="assets/images/one.jpg" style="width:250px; height:208px;"> <!--gem #1-->
+					<img src="assets/images/two.jpg" style="width:250px; height:208px;"> <!--gem #2-->
+					<img src="assets/images/three.jpg" style="width:250px; height:208px;"> <!--gem #3-->
+					<img src="assets/images/four.jpg" style="width:250px; height:208px;"> <!--gem #4-->
+
+				</div>
+		<div class="col-sm-3 totalScore">
+			<h2>Total Score</h2>
+			<div class="card card-outline">
+  				<div class="card-block">
+  					total user enters when clicking image
+  			</div>
+			  </div>	
+		</div>
+	</div>
+	  <br>
+		<div class="row">
+			<div class="col-lg-12  gameCounter ">
+				<h2 style="text-align:center;">Scoreboard</h2>
+					<div class="card card-outline">
+  				<div class="card-block">
+				<p id ="win"></p>
+				<p id ="lose"></p>
+  			</div>
+				</div>	
+			</div>
+		</div>
+	<div class="row">
+		<!--insert button for click event here-->
+		<button >Click Me</button>
+	</div>
+
+
+<script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+  <script type="text/javascript" src="assets/javascript/game.js"></script>
+
+</body>
+</html>
