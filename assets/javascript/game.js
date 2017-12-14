@@ -8,102 +8,192 @@
 
 $( document ).ready(function() {
 
+var win = 0; 
+var lose = 0;
+var userGuess = 0;
+
+//score user must try to achieve
  var mathRandom = Math.floor(Math.random() * (89 - 30));
 console.log(mathRandom);
 $('.randomNumber').html(mathRandom);
 
+
+//function that creates random number
+function superRandomNumber () {
+	return Math.floor(Math.random() * 100);
+}
+
+//function for winning and losing
+// function checkWins () {
+// 	if (totalScore === mathRandom) {
+// 		console.log("you won!");
+// 	} else {
+// 	    console.log("you're almost there....");
+// 	}
+// }
+function checkLoss() {
+	if (totalScore > mathRandom) {
+		console.log("you lost!");
+		alert("you lost!");
+		lose++;
+		$("#losses").html("lose:" + lose);
+	} else {
+		console.log("you won!");
+		alert("you won!");
+		win++;
+		$("#wins").html("wins:" + win);
+
+	} 
+	
+}
+
+
 //object method
 // var randomNumbers = [89,30,67,46];
 var gemValues = {
-	gemZero: 89,
- 	gemOne: 30,
- 	gemTwo: 67,
- 	gemThree: 46
+	gemZero: superRandomNumber(),
+ 	gemOne: superRandomNumber(),
+ 	gemTwo: superRandomNumber(),
+ 	gemThree: superRandomNumber()
 };
  	
+ 	//check gem values through console.log
+ 	console.log("gem value currently is:" + gemValues.gemZero);
+ 	console.log("gem value currently is:" + gemValues.gemOne);
+ 	console.log("gem value currently is:" + gemValues.gemTwo);
+ 	console.log("gem value currently is:" + gemValues.gemThree);
+
+ 	//SUBLIME CHEAT CODE:
+	//cmd + ] --indents left or right
+
+	//click function for images 
+	//use counter method to add all of the numbers together 
+		var totalScore=0;
+		
+
+		//gemZero click event
+		$("#gemZero").on("click", function () {
+			//console.log("gemZero works"); //works
+		     //totalScore = totalScore + gemValues.gemZero;
+			//console.log(gemValues.gemZero); works
+
+			totalScore += gemValues.gemZero;
+			console.log("total score is :" + gemValues.gemZero);
+			$("#current-points").html(totalScore);
+
+			//call win/loss function
+			//checkWins();
+			checkLoss(); 
+
+		})
+
+		//gemOne click event
+		$("#gemOne").on("click", function () {
+			//console.log("gemZero works"); //works
+		     //totalScore = totalScore + gemValues.gemZero;
+			//console.log(gemValues.gemZero); works
+
+			totalScore += gemValues.gemOne;
+			console.log("total score is :" + gemValues.gemOne);
+			$("#current-points").html(totalScore);
+
+			//call win/loss function
+			//checkWins();
+			checkLoss(); 
+
+		})
+
+		//gemTwo click event 
+		$("#gemTwo").on("click", function () {
+			//console.log("gemZero works"); //works
+		     //totalScore = totalScore + gemValues.gemZero;
+			//console.log(gemValues.gemZero); works
+
+			totalScore += gemValues.gemTwo;
+			console.log("total score is :" + gemValues.gemTwo);
+			$("#current-points").text(totalScore);
+
+			//call win/loss function
+			//checkWins();
+			checkLoss(); 
+
+		})
+
+		//gemThree click event 
+		$("#gemThree").on("click", function () {
+			//console.log("gemZero works"); //works
+		     //totalScore = totalScore + gemValues.gemZero;
+			//console.log(gemValues.gemZero); works
+
+			totalScore += gemValues.gemThree;
+			console.log("total score is :" + gemValues.gemThree);
+			$("#current-points").text(totalScore);
+
+			//call win/loss function
+			//checkWins();
+			checkLoss(); 
+
+		})
+
+		//gemFour click event
+		$("#gemFour").on("click", function () {
+			//console.log("gemZero works"); //works
+		     //totalScore = totalScore + gemValues.gemZero;
+			//console.log(gemValues.gemZero); works
+
+			totalScore += gemValues.gemFour;
+			console.log("total score is :" + gemFour);
+			$("#current-points").text(totalScore);
+
+			//call win/loss function
+			//checkWins();
+			checkLoss(); 
+
+		})
 
 
-//TUTOR QUESTION: Line 60 says randomNumber is not defined
-//Should change randomNumber on line 60 to variable mathRandom?
+		$("#current-points").html(totalScore);
+		$("#current-wins").html();
+		$("#current-losses").html();
 
-//second option 
-
-$(document).ready(function () {
-//click function for images 
-//use counter method to add all of the numbers together 
-var gameCounter=0;
-$(".gemImages").on("click", function () {
-	gameCounter += 1;
-
-	//index into the gemValues object so to take value, and add
-	//Total score + gameCounter + gemValues =?
-	
-	$('.totalScore').html("Total score:" + gameCounter) ;
-	
-	
-
-	 
-
-	
-
-	
-
-		//thought of using for loop to run through 
-		//gemImages object that was defined on line 15
-		// for ( var i = 0; i <gemImages.length; i ++) {
-		// 	parseInt(totalScore) + parseInt(gemImages); 
-		// 	console.log('did it work?');
-		// }
 	})
 
-})
 
-});
+
 
 //make variable for when user finds variable 
-var userVariable;
-//conditional running through each number
-if ( userVariable > 89) {
-	console.log("right");
-}
- else {
-	console.log("wrong");
-}
+// var userVariable;
+// //conditional running through each number
+// if ( userVariable > 89) {
+// 	console.log("right");
+// }
+//  else {
+// 	console.log("wrong");
+// }
 
 //make userGuess a click event?
-var userGuess = 0;
-
-//conditional summzarizing running through each number
-if (userGuess === randomNumber) {
-	alert("correct");
-} else {
-	alert("wrong");
-}
-//why is this on click function here when there is
-//anothe click function above on line 34
-// $(".gemImages").on("click", function () {
-
-// });
-//maybe use array to run through numbers. numbers in array can add together
+// var userGuess = 0;
+// var randomNumber = 0;
+// //conditional summzarizing running through each number
+// if (userGuess === randomNumber) {
+// 	alert("correct");
+// } else {
+// 	alert("wrong");
+// }
 
 
 
 //conditional to add wins and losses together
-var win = 0; 
-var lose = 0;
+// var win = 0; 
+// var lose = 0;
+// var userGuess = 0;
 
-if (userGuess === randomNumber) {
-	win++;
-	$("#win").html("wins:" + win);
-} else {
-	lose++;
-	$("#lose").html("lose:" + lose);
+//$("#card-block").html(totalScore);
 
-}
+
+
+
+// }
 
 
 //}
-
-
-
-	
