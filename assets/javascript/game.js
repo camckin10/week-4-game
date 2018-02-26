@@ -31,13 +31,15 @@ function superRandomNumber () {
 // 	    console.log("you're almost there....");
 // 	}
 // }
+
+
 function checkLoss() {
 	if (totalScore > mathRandom) {
 		console.log("you lost!");
 		alert("you lost!");
 		lose++;
 		$("#losses").html("lose:" + lose);
-	} else {
+	} else if(totalScore === mathRandom) {
 		console.log("you won!");
 		alert("you won!");
 		win++;
