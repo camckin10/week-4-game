@@ -19,5 +19,4 @@ Deployment
 You can play the game here: https://camckin10.github.io/week-4-game/
 
 
-Screen capture 
---insert images
+
